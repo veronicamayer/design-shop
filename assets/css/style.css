@@ -1,0 +1,217 @@
+@font-face {
+    font-family: Karla;
+    src: url(../fonts/Karla-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Karla;
+}
+
+/* ------
+HEADER
+--------- */
+
+.topNav {
+    padding: 4vh 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.topNav a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+.topNav .icon {
+    display: none;
+}
+
+nav {
+    text-align: right;
+}
+
+nav a {
+    margin: 0 2vw;
+    color: black;
+    text-decoration: none;
+}
+
+
+/* ------
+MAIN
+--------- */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 6vw;
+    gap: 2vw;
+}
+
+/* Für das dreispaltige Design */
+main article { 
+    display: grid;
+    grid-template-columns: 75% 25%;
+    margin: 4vh 0;
+}
+
+/* Für alle Fotos, die über die gesamte Breite gehen */
+.articleLarge { 
+    grid-column: 1/4;
+}
+
+main article a {
+    grid-column: 1/3;
+    background-color: #eeeeee;
+    margin-bottom: 1vh;
+}
+
+main article a img {
+    width: 100%;
+    height: 100%;
+}
+
+main article a img:hover {
+    opacity: 0.5;
+}
+
+h2 {
+    font-size: 0.9rem;
+}
+
+h3 {
+    font-size: 0.8rem;
+    color: gray;
+    grid-column: 1/1;
+}
+
+main article p {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    text-align: right;
+}
+
+/* ------
+FOOTER
+--------- */
+
+footer {
+    display: grid;
+    grid-template: 30% 15% 20% 35%;
+    margin: 0 26vw 0 6vw;
+    gap: 4vh 6vw;
+    font-size: 0.8rem;
+}
+
+footer article p {
+    line-height: 1.3rem;
+
+}
+
+footer article p:first-of-type {
+    font-size: 1rem;    
+    margin: 6vh 0 3vh 0;
+}
+
+footer article p span {
+    font-variation-settings: "wght" 600;
+}
+
+footer article a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-variation-settings: "wght" 500;
+    line-height: 1.5rem;
+}
+
+footer article a:nth-of-type(1) {
+    display: inline;
+}
+
+.copyright {
+    color: gray;
+    grid-column: 1/5;
+    margin-bottom: 5vh;
+}
+
+@media screen and (max-width: 425px) {
+
+    /* default styles für den header, wenn die Navigation noch nicht ausgeklappt wurde */
+    .topNav {
+        grid-template-columns: 90% 10%;
+        gap: 1vh 0;
+    }
+    
+    .topNav #myLinks {
+        display: none;
+    }
+
+    .topNav .icon {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    /* Wenn jemand auf das Menü Icon klickt, wird durch js die Klasse .responsive aktiviert und stylet die Navigation wie folgt */
+    .topNav.responsive #myLinks {
+        display: block;
+        grid-column: 1/3;
+        border-top: 0.5px solid #eeeeee;
+        border-bottom: 0.5px solid #eeeeee;
+        padding: 2vh 0;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+    
+    .topNav a {
+        line-height: 1.5rem;
+        font-size: 0.7rem;
+        display: block;
+        color: black;
+        text-align: right;
+        text-decoration: none;
+    }
+    
+
+    .topNav a img {
+        width: 25px;
+        height: 25px;
+    }
+
+    main { 
+    display: block;
+    }
+
+    footer {
+        display: block;
+        margin-top: 10vh;
+    }
+
+    footer article p:first-of-type {
+        margin-top: 3vh
+    }
+
+    footer article a {
+        font-variation-settings: "wght" 700;
+    }
+
+    .copyright {
+        margin-top: 5vh;
+    }
+}
+
+
+
+
+
